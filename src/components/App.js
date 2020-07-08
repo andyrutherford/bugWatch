@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import Alert from 'react-bootstrap/Alert';
+import Badge from 'react-bootstrap/Badge';
 
 import LogItem from './LogItem';
 import AddLogItem from './AddLogItem';
@@ -50,6 +51,11 @@ const App = () => {
     showAlert('Log Added');
   };
 
+  const removeItem = (_id) => {
+    setLogs(logs.filter((log) => log._id !== _id));
+    showAlert('Log Removed', 'danger');
+  };
+
   const showAlert = (message, variant = 'success', seconds = 3000) => {
     setAlert({
       show: true,
@@ -77,12 +83,16 @@ const App = () => {
             <th>Log Text</th>
             <th>User</th>
             <th>Created</th>
-            <th></th>
+            <th>
+              <Badge variant='danger' onClick={() => setLogs([])}>
+                Remove All
+              </Badge>
+            </th>
           </tr>
         </thead>
         <tbody>
           {logs.map((log) => (
-            <LogItem key={log._id} log={log} />
+            <LogItem key={log._id} log={log} removeItem={removeItem} />
           ))}
         </tbody>
       </Table>

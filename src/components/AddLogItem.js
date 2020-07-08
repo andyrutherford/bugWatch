@@ -64,6 +64,7 @@ const AddLogItem = ({ addItem }) => {
                 variant='secondary'
                 block
                 onClick={onSubmit}
+                disabled={!(text && user && priority)}
               >
                 Create Log
               </Button>
