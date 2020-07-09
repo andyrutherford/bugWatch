@@ -1,6 +1,13 @@
 const path = require('path');
 const url = require('url');
 const { app, BrowserWindow } = require('electron');
+const dotenv = require('dotenv');
+const connectDB = require('./config/db');
+
+dotenv.config({ path: './config/config.env' });
+
+// Connect to db
+connectDB();
 
 let mainWindow;
 
