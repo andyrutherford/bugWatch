@@ -86,6 +86,18 @@ async function sendLogs() {
   }
 }
 
+// Create log
+ipcMain.on('logs:add', addLog);
+
+async function addLog(e, item) {
+  try {
+    await Log.create(item);
+    sendLogs();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
