@@ -1,10 +1,14 @@
 # bugWatch
 
-App description
+Bug tracking app built using Electron.
+
+<img src="screenshot-1.png" width="800"/>
 
 ## Features
 
-- App features
+- Bug logs include a log description, user, and priority of low, moderate, or high
+- Remove logs that have been completed
+- Logs are saved in a database
 
 ## Setup
 
