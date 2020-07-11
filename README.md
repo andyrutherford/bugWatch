@@ -1,75 +1,53 @@
-## Simple Electron React Boilerplate
+# bugWatch
 
-This is a simple boilerplate to get up and running with Electron and React. It is a customized version of [Alex Devero's](https://github.com/alexdevero/electron-react-webpack-boilerplate) repo and is used in my Electron course
+App description
 
-### Install
+## Features
 
-#### Clone this repo
+- App features
 
-```
-git clone https://github.com/bradtraversy/simple-electron-react.git
-```
+## Setup
 
-#### Install dependencies
+To clone and run this application, you'll need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/) (which comes with [npm](https://www.npmjs.com/)) installed on your computer. From your command line:
 
-```
-npm install
-```
+```sh
+# Clone this repository
+$ git clone https://github.com/andyrutherford/beer-cooler.git
 
-or
-
-```
-yarn
+# Install dependencies
+$ npm install
 ```
 
-### Usage
+In config/db.js replace process.env.MONGO_URI with your own mongoDB URI:
 
-#### Run the app
-
-```
-npm run start
-```
-
-or
-
-```
-yarn start
+```sh
+    const conn = await mongoose.connect(<your-mongodb-uri>, {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useUnifiedTopology: true,
+    });
 ```
 
-#### Build the app (automatic)
+```sh
+# Run the app
+$ npm run start
 
-```
-npm run package
-```
+# Build the app (automatic)
+$ npm run package
 
-or
-
-```
-yarn package
-```
-
-#### Build the app (manual)
-
-```
-npm run build
+# Build the app (manual)
+$ npm run build
 ```
 
-or
+## Tech
 
-```
-yarn build
-```
+- [Electron](https://www.electronjs.org/) - framework for creating native applications with web technologies like JavaScript
+- [ReactJS](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [node.js](http://nodejs.org) - evented I/O for the backend
+- [mongoDB](https://www.mongodb.com/) - general purpose, document-based, distributed database
+- [mongoose](https://mongoosejs.com/) - MongoDB object modeling for Node.js
+- [React Bootstrap](https://react-bootstrap.github.io/) - Bootstrap 4 components built with React.
 
-#### Test the app (after `npm run build` || `yarn run build`)
+## License
 
-```
-npm run prod
-```
-
-```
-yarn prod
-```
-
-### Change app title
-
-Change the app title in the **webpack.build.config.js** and the **webpack.dev.config.js** files
+MIT

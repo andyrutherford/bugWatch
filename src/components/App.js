@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import Alert from 'react-bootstrap/Alert';
-import Badge from 'react-bootstrap/Badge';
 import LogItem from './LogItem';
 import AddLogItem from './AddLogItem';
 import { ipcRenderer } from 'electron';
+
+import logo from '../../assets/icon.png';
 
 const App = () => {
   const [logs, setLogs] = useState([]);
@@ -68,6 +69,11 @@ const App = () => {
 
   return (
     <Container>
+      <h1 className='display-3 text-center mt-3'>
+        <img src={logo} style={{ paddingBottom: '60px', height: '100px' }} />
+        bugWatch
+      </h1>
+
       <AddLogItem addItem={addItem} />
       {alert.show && <Alert variant={alert.variant}>{alert.message}</Alert>}
       <Table>
@@ -77,11 +83,7 @@ const App = () => {
             <th>Log Text</th>
             <th>User</th>
             <th>Created</th>
-            <th>
-              <Badge variant='danger' onClick={() => setLogs([])}>
-                Remove All
-              </Badge>
-            </th>
+            <th></th>
           </tr>
         </thead>
         <tbody>

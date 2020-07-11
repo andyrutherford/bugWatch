@@ -24,7 +24,7 @@ const AddLogItem = ({ addItem }) => {
   };
 
   return (
-    <Card className='mt-5 mb-3'>
+    <Card className='mt-3 mb-3'>
       <Card.Body>
         <Form>
           <Row className='my-3'>
